@@ -42,7 +42,7 @@ Connect with me:
 
 const myPortfolio = new Portfolio(
     "Bibek Budhathoki",
-    20,
+    21,
     "Full Stack Developer (Java)",
     "BSC Hons. Computing (BIT)",
     "Itahari International College - London Metropolitan University",
