@@ -1,4 +1,4 @@
-/* General reset and container styling */
+/* Reset & base styles */
 html,
 body {
     margin: 0;
@@ -8,48 +8,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1e1e1e;
+    background-color: #0d1117;
+    /* Slightly deeper for a richer terminal look */
+    color: #c9d1d9;
 }
 
 /* Main container */
 .container {
-    width: 90%;
-    /* Increased for mobile responsiveness */
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 95%;
+    max-width: 1300px;
+    /* Slightly increased for large screens */
+    margin: 20px;
 }
 
-/* Terminal box styling */
+/* Terminal box */
 .terminal {
-    background-color: #1e1e1e;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: #161b22;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     color: #d4d4d4;
-    padding: 15px;
-    width: 100%;
-    /* Full width on mobile */
-    max-width: 100%;
-    min-height: 300px;
-    /* Reduced height for mobile */
-    overflow: auto;
-    /* Enables scrolling for overflow content */
+    padding: 0;
+    overflow: hidden;
 }
 
-/* Terminal header styling */
+/* Terminal header */
 .terminal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333333;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    background-color: #21262d;
+    padding: 10px 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #30363d;
 }
 
-/* Header buttons */
+/* Terminal buttons */
 .buttons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .buttons span {
@@ -71,13 +68,41 @@ body {
     background-color: #27c93f;
 }
 
-/* Terminal body content */
-.terminal-body {
-    padding: 10px;
+/* Terminal title */
+.title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #c9d1d9;
     font-size: 14px;
+}
+
+/* Copy button */
+.copy-btn {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 5px 12px;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #2ea043;
+}
+
+.copy-btn:active {
+    background-color: #196c2e;
+}
+
+/* Terminal body */
+.terminal-body {
+    padding: 20px;
+    font-size: 15px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Syntax highlighting */
@@ -108,82 +133,67 @@ body {
 
 /* Social links */
 #social-links {
-    margin-top: 20px;
-    color: #d4d4d4;
-    font-size: 14px;
+    margin-top: 25px;
+    font-size: 15px;
 }
 
 #social-links a {
-    color: #569cd6;
+    color: #58a6ff;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 #social-links a:hover {
-    color: #9cdcfe;
+    color: #79c0ff;
     text-decoration: underline;
 }
 
-/* Mobile Responsive Styling */
-@media (max-width: 768px) {
+/* Medium screens */
+@media (max-width: 992px) {
     .terminal-body {
-        font-size: 12px;
-        /* Smaller font size for medium devices */
+        font-size: 14px;
+        padding: 15px;
     }
 
     #social-links {
-        font-size: 12px;
-        /* Smaller social link size */
+        font-size: 14px;
     }
 }
 
+/* Small screens */
 @media (max-width: 576px) {
     .container {
-        width: 95%;
-        /* Utilize more of the screen on mobile */
+        width: 100%;
+        margin: 10px;
     }
 
-    .terminal {
-        min-height: 250px;
-        /* Reduce terminal height for mobile */
+    .terminal-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
     }
 
     .terminal-body {
-        font-size: 10px;
-        /* Further reduced font size for smaller screens */
-        padding: 8px;
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .copy-btn {
+        padding: 4px 10px;
+        font-size: 12px;
     }
 
     #social-links {
-        font-size: 10px;
+        font-size: 12px;
     }
 
-    /* Hide long URLs or trim them for mobile */
     #social-links a {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
-}
-
-/* styles.css (Add this for the button styling) */
-.copy-btn {
-    background-color: #007acc;
-    /* Blue similar to VS Code */
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.copy-btn:hover {
-    background-color: #005a9e;
-    /* Darker blue on hover */
-}
-
-.copy-btn:active {
-    background-color: #003f73;
-    /* Even darker blue on click */
 }
